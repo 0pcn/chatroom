@@ -70,11 +70,11 @@ export default {
   mounted() {
     this.scrollToBottom();
     //群聊：接收群聊訊息
-    this.sockets.subscribe('receive_msg', data => {
+    this.sockets.subscribe('receiveMsg', data => {
       this.message.push(data)
     }),
     //私聊：接收私聊訊息
-    this.sockets.subscribe('receive_private_msg', data => {
+    this.sockets.subscribe('receivePrivateMsg', data => {
       this.message.push(data)
     })
   },
@@ -96,13 +96,13 @@ export default {
         return false
       }
       /*//群聊：傳送訊息給服務端
-      this.$socket.emit('send_msg', {
+      this.$socket.emit('sendMsg', {
         message: this.text,
         time: this.getTime(),
         name:this.loginName
       })*/
       //私聊：發送訊息給服務端
-      this.$socket.emit('send_private_msg',{
+      this.$socket.emit('sendPrivateMsg',{
         message: this.text,
         time: this.getTime(),
         name: this.loginName,

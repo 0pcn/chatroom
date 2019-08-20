@@ -51,7 +51,7 @@ export default {
     },
     join() {
       //監聽成員加入
-      this.sockets.subscribe('user_joined', (user) => {
+      this.sockets.subscribe('userJoined', (user) => {
         console.log('new' + user)
         this.newUser(user)
         this.$message({
@@ -60,7 +60,7 @@ export default {
         })
       })
       //第一次登陸接收其他成員信息
-      this.sockets.subscribe('first_login', (userarr) => {
+      this.sockets.subscribe('firstLogin', (userarr) => {
         if (userarr.length >= 1) {
           for (var i = 0; i < userarr.length; i++) {
             this.newUser(userarr[i])
