@@ -18,31 +18,31 @@ io.on('connection',(socket) => {
       socket.user = user;
       usersocket[user] = socket;
       userarr.push(user)
-      socket.emit('first_login',userarr);
-      socket.broadcast.emit('user_joined',user);
+      socket.emit('firstLogin',userarr);
+      socket.broadcast.emit('userJoined',user);
       console.log(user)
     }
 
   });
 
   //私聊：監聽客戶端發送訊息服務端接收後，傳送給目標
-  socket.on('send_private_msg',(res) =>
+  socket.on('sendPrivateMsg',(res) =>
   {
     console.log(res);
     userarr.forEach( i=>{
       if(res.to === i)
       {
-        usersocket[res.to].emit('receive_private_msg',res);
+        usersocket[res.to].emit('receivePrivateMsg',res);
       }
     })
 
   });
 
   //群聊：監聽客戶端發送訊息服務端接收後，傳送
-  socket.on('send_msg',(data) => {
+  socket.on('sendMsg',(data) => {
 
     // 给该socket的客户端发消息不包括自己
-    socket.broadcast.emit('receive_msg',data)
+    socket.broadcast.emit('receiveMsg',data)
     console.log('emit',data)
   })
 })

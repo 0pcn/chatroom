@@ -2,10 +2,10 @@
   <div>
     <b-card-header no-body>推薦 ({{count}})</b-card-header>
     <b-list-group flush v-for="friend in newfrienddata" :key="friend.id">
-      <b-list-group-item class="listname">
+      <b-list-group-item class="listName">
         <b-img :src="friend.src" rounded="circle" class="img"></b-img>
         {{friend.name}}
-        <el-button type="primary" plain @click="add(friend)" class="addbtn"><i
+        <el-button type="primary" plain @click="add(friend)" class="addBtn"><i
           class="icon el-icon-circle-plus-outline"></i>加入好友
         </el-button>
       </b-list-group-item>
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 
 
-.listname {
+.listName {
   display: flex;
   align-items: center;
   position: relative;
@@ -63,7 +63,7 @@ export default {
     padding: 0;
     float: left;
   }
-  .addbtn {
+  .addBtn {
     position: absolute;
     right: 20px;
     padding: 10px;

@@ -2,10 +2,10 @@
   <div class="friend">
     <b-card-header no-body>好友 ({{count}})</b-card-header>
     <b-list-group flush v-for="friend in friendlist" :key="friend.id">
-      <b-list-group-item class="listname" @click="tochat(friend)">
+      <b-list-group-item class="listName" @click="tochat(friend)">
         <b-img :src="friend.src" rounded="circle" class="img"></b-img>
         {{friend.name}}
-        <b-badge class="listnum" variant="primary" pill>{{friend.readnum}}</b-badge>
+        <b-badge class="listNum" variant="primary" pill>{{friend.readnum}}</b-badge>
       </b-list-group-item>
     </b-list-group>
   </div>
@@ -51,7 +51,7 @@ export default {
     },
     join() {
       //監聽成員加入
-      this.sockets.subscribe('user_joined', (user) => {
+      this.sockets.subscribe('userJoined', (user) => {
         console.log('new' + user)
         this.newUser(user)
         this.$message({
@@ -60,7 +60,7 @@ export default {
         })
       })
       //第一次登陸接收其他成員信息
-      this.sockets.subscribe('first_login', (userarr) => {
+      this.sockets.subscribe('firstLogin', (userarr) => {
         if (userarr.length >= 1) {
           for (var i = 0; i < userarr.length; i++) {
             this.newUser(userarr[i])
@@ -75,7 +75,7 @@ export default {
 .friend {
   width: 100%;
 
-  .listname {
+  .listName {
     display: flex;
     align-items: center;
     position: relative;
@@ -87,7 +87,7 @@ export default {
       float: left;
     }
 
-    .listnum {
+    .listNum {
       position: absolute;
       right: 20px;
     }
