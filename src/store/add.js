@@ -2,7 +2,7 @@ import { Message } from 'element-ui'
 
 const friendList = {
   state: {
-    friendlist: [
+    friendList: [
       {
         id: 1,
         name: 'Andy',
@@ -34,7 +34,7 @@ const friendList = {
         src: 'https://picsum.photos/250/250/?image=57'
       },
     ],
-    newfrienddata: [
+    newFriendData: [
       {
         id: 6,
         name: 'Bo',
@@ -65,30 +65,30 @@ const friendList = {
   },
   mutations: {
     ADD_FRIEND_TO_NEW(state, friend, key) {
-      state.friendlist.push(friend)
-      state.newfrienddata.splice(key, 1)
+      state.friendList.push(friend)
+      state.newFriendData.splice(key, 1)
       Message.success('加入成功！')
       console.log('add',friend)
     },
     SET_NEW_FRIEND_DATA (state) {
-      sessionStorage.setItem('newfrienddata',JSON.stringify(state.newfrienddata))
-      state.newfrienddata = state.newfrienddata || JSON.parse(sessionStorage.getItem('newfrienddata'))
-      console.log('session', state.newfrienddata)
+      sessionStorage.setItem('newFriendData',JSON.stringify(state.newFriendData))
+      state.newFriendData = state.newFriendData || JSON.parse(sessionStorage.getItem('newFriendData'))
+      console.log('session', state.newFriendData)
     },
     GET_NEW_FRIEND_DATA(state) {
-      return state.newfrienddata || JSON.parse(sessionStorage.getItem('newfrienddata'))
+      return state.newFriendData || JSON.parse(sessionStorage.getItem('newFriendData'))
     },
     NEW_USER(state,name) {
       state.new = ({ name: name , src:'https://picsum.photos/250/250/?image=15'})
-      state.friendlist.push(state.new)
+      state.friendList.push(state.new)
     },
     SET_FRIEND_LIST (state) {
-      sessionStorage.setItem('friendlist', JSON.stringify(state.friendlist))
-      state.friendlist = state.friendlist || JSON.parse(sessionStorage.getItem('friendlist'))
-      console.log('session', state.friendlist)
+      sessionStorage.setItem('friendList', JSON.stringify(state.friendList))
+      state.friendList = state.friendList || JSON.parse(sessionStorage.getItem('friendList'))
+      console.log('session', state.friendList)
     },
     GET_FRIEND_LIST(state) {
-      return state.friendlist || JSON.parse(sessionStorage.getItem('friendlist'))
+      return state.friendList || JSON.parse(sessionStorage.getItem('friendList'))
     }
   },
   actions: {
@@ -112,8 +112,8 @@ const friendList = {
     }
   },
   getters: {
-    friendlist: state => state.friendlist,
-    newfrienddata: state => state.newfrienddata
+    friendList: state => state.friendList,
+    newFriendData: state => state.newFriendData
   }
 }
 

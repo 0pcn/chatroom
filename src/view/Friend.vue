@@ -1,7 +1,7 @@
 <template>
   <div class="friend">
     <b-card-header no-body>好友 ({{count}})</b-card-header>
-    <b-list-group flush v-for="friend in friendlist" :key="friend.id">
+    <b-list-group flush v-for="friend in friendList" :key="friend.id">
       <b-list-group-item class="listName" @click="tochat(friend)">
         <b-img :src="friend.src" rounded="circle" class="img"></b-img>
         {{friend.name}}
@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import friendlist from "../store/add";
 
 
@@ -26,13 +26,12 @@ export default {
     this.getList()
   },
   computed: {
-    ...mapState(['friendlist']),
-    ...mapGetters(['friendlist']),
+    ...mapGetters(['friendList']),
     count() {
       /*for (var i = 0; i < this.friendlist.length; i++) {
         this.countlist = this.friendlist.length
       }*/
-      return this.friendlist.length
+      return this.friendList.length
     },
   },
   mounted() {

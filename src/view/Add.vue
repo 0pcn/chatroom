@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card-header no-body>推薦 ({{count}})</b-card-header>
-    <b-list-group flush v-for="friend in newfrienddata" :key="friend.id">
+    <b-list-group flush v-for="friend in newFriendData" :key="friend.id">
       <b-list-group-item class="listName">
         <b-img :src="friend.src" rounded="circle" class="img"></b-img>
         {{friend.name}}
@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import { mapActions, mapGetters, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Friend',
@@ -23,13 +23,12 @@ export default {
     }
   },
   computed: {
-    ...mapState(['newfrienddata']),
-    ...mapGetters(['newfrienddata']),
+    ...mapGetters(['newFriendData']),
     count() {
       /*for (var i = 0; i < this.newfrienddata.length; i++) {
         this.countlist = this.newfrienddata.length
       }*/
-      return this.newfrienddata.length
+      return this.newFriendData.length
     }
   },
   created() {
