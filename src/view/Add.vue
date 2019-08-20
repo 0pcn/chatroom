@@ -26,10 +26,10 @@ export default {
     ...mapState(['newfrienddata']),
     ...mapGetters(['newfrienddata']),
     count() {
-      for (var i = 0; i < this.newfrienddata.length; i++) {
+      /*for (var i = 0; i < this.newfrienddata.length; i++) {
         this.countlist = this.newfrienddata.length
-      }
-      return this.countlist
+      }*/
+      return this.newfrienddata.length
     }
   },
   created() {

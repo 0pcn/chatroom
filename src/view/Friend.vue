@@ -29,10 +29,10 @@ export default {
     ...mapState(['friendlist']),
     ...mapGetters(['friendlist']),
     count() {
-      for (var i = 0; i < this.friendlist.length; i++) {
+      /*for (var i = 0; i < this.friendlist.length; i++) {
         this.countlist = this.friendlist.length
-      }
-      return this.countlist
+      }*/
+      return this.friendlist.length
     },
   },
   mounted() {
