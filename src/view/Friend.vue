@@ -2,10 +2,10 @@
   <div class="friend">
     <b-card-header no-body>好友 ({{count}})</b-card-header>
     <b-list-group flush v-for="friend in friendlist" :key="friend.id">
-      <b-list-group-item class="listname" @click="tochat(friend)">
+      <b-list-group-item class="listName" @click="tochat(friend)">
         <b-img :src="friend.src" rounded="circle" class="img"></b-img>
         {{friend.name}}
-        <b-badge class="listnum" variant="primary" pill>{{friend.readnum}}</b-badge>
+        <b-badge class="listNum" variant="primary" pill>{{friend.readnum}}</b-badge>
       </b-list-group-item>
     </b-list-group>
   </div>
@@ -74,7 +74,7 @@ export default {
 .friend {
   width: 100%;
 
-  .listname {
+  .listName {
     display: flex;
     align-items: center;
     position: relative;
@@ -86,7 +86,7 @@ export default {
       float: left;
     }
 
-    .listnum {
+    .listNum {
       position: absolute;
       right: 20px;
     }

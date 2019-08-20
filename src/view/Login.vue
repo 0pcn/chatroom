@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div  class="setname">
-      <h5 class="setname_header">請輸入姓名：</h5>
+    <div  class="setName">
+      <h5 class="setNameHeader">請輸入姓名：</h5>
       <el-form  :model="vail" :rules="rules"  :ref="vail" :hide-required-asterisk="true">
         <el-form-item  prop="username">
-          <el-input class="setname_input" v-model="vail.username" ></el-input>
+          <el-input class="setNameInput" v-model="vail.username" ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button @click="login(vail)" class="setname_button" type="primary">確認</el-button>
+          <el-button @click="login(vail)" class="setNameButton" type="primary">確認</el-button>
         </el-form-item>
       </el-form>
-      <div class="setname_bottom"></div>
+      <div class="setNameBottom"></div>
     </div>
   </div>
 </template>
@@ -62,27 +62,27 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-.setname {
+.setName {
   border: solid 1px lightgrey;
   width: 60%;
   min-width: 320px;
   max-width: 500px;
   margin: 0px auto;
   position: relative;
-  .setname_header {
+  .setNameHeader {
     color: #fff;
     background-color: #2B364B;
     padding: 10px;
     text-align: center;
     border: solid 1px lightgrey;
   }
-  .setname_input {
+  .setNameInput {
     margin: 30px 0px 0px 0px
   }
-  .setname_button {
+  .setNameButton {
     margin: 0px 0px 10px 45%;
   }
-  .setname_bottom {
+  .setNameBottom {
     background-color: #2B364B;
     height: 20px;
   }
