@@ -21,7 +21,7 @@
           </el-menu-item>
         </el-menu>
       </el-aside>
-      <el-container class="maincontainer">
+      <el-container class="mainContainer">
         <el-header style="text-align: right; font-size: 12px; height: 40px" class="serch">
           <el-input v-show="showSearch"
                     placeholder="搜尋聊天訊息或內容">
@@ -101,7 +101,7 @@ html, body {
         width: 100%;
       }
     }
-    .maincontainer {
+    .mainContainer {
       height: auto;
       .serch {
         padding: 0;

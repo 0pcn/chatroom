@@ -1,6 +1,6 @@
 import { Message } from 'element-ui'
 
-const friendlist = {
+const friendList = {
   state: {
     friendlist: [
       {
@@ -117,4 +117,4 @@ const friendlist = {
   }
 }
 
-export default friendlist
+export default friendList

@@ -1,5 +1,5 @@
 <template>
-  <div class="allcard">
+  <div class="allCard">
     <b-card
       title="Card Title"
       img-src="https://picsum.photos/600/300/?image=25"
@@ -13,7 +13,7 @@
       </b-card-text>
       <div slot="footer">
         <small class="text-muted">Last updated 3 mins ago</small>
-        <el-button class="postbtn" @click="add"><font-awesome-icon icon="thumbs-up" size="lg"/></el-button>
+        <el-button class="postBtn" @click="add"><font-awesome-icon icon="thumbs-up" size="lg"/></el-button>
         <span class="count">{{count}}</span>
       </div>
 
@@ -31,7 +31,7 @@
       </b-card-text>
       <div slot="footer">
         <small class="text-muted">Last updated 5 mins ago</small>
-        <el-button class="postbtn" @click="add"><font-awesome-icon icon="thumbs-up" size="lg"/></el-button>
+        <el-button class="postBtn" @click="add"><font-awesome-icon icon="thumbs-up" size="lg"/></el-button>
         <span class="count">{{count}}</span>
       </div>
     </b-card>
@@ -53,7 +53,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.allcard {
+.allCard {
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -65,7 +65,7 @@ export default {
   }
 }
 
-.postbtn {
+.postBtn {
   float: right;
   padding: 5px 0px 5px 0px;
   margin: 0px 10px 0px 0px;
