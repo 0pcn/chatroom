@@ -80,7 +80,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 html, body {
   padding: 0;
   margin: 0;
@@ -88,37 +88,33 @@ html, body {
   height: auto;
   background-color: red;
   scroll-behavior: smooth;
+
+  .all {
+    min-width: 320px;
+    width: 100%;
+    .el-aside {
+      height: 100vh;
+      .el-menu {
+        min-height: 100%;
+        padding: 0;
+        background-color: #122036;
+        width: 100%;
+      }
+    }
+    .maincontainer {
+      height: auto;
+      .serch {
+        padding: 0;
+        .pen {
+          margin-top: 13px;
+          margin-left: 5px;
+        }
+      }
+      .el-main {
+        height: auto;
+      }
+    }
+  }
 }
 
-.all {
-  min-width: 320px;
-  max-width: 769px;
-}
-
-.maincontainer {
-  height: auto;
-}
-
-.el-main {
-  height: auto;
-}
-
-.el-aside {
-  height: auto;
-}
-
-.el-menu {
-  min-height: 100%;
-  padding: 0;
-  background-color: #122036;
-}
-
-.serch {
-  padding: 0;
-}
-
-.pen {
-  margin-top: 13px;
-  margin-left: 5px;
-}
 </style>
