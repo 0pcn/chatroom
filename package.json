@@ -15,7 +15,7 @@
     "bootstrap-vue": "^2.0.0-rc.27",
     "core-js": "^2.6.5",
     "element-ui": "^2.11.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "portal-vue": "^2.1.5",
     "socket.io": "^2.2.0",
     "vue": "^2.6.10",
